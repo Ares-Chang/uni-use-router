@@ -1,6 +1,7 @@
 import { isObject } from '@antfu/utils'
+import type { LocationQueryRaw } from './types'
 
-export function toQueryStringify(params: Record<string, any>) {
+export function toQueryStringify(params: LocationQueryRaw) {
   return Object.entries(params) // 将对象转换成 [key, value] 数组
     .map(([key, value]) => encodeURI(
       `${key}=${isObject(value) ? JSON.stringify(value) : value}`,
