@@ -1,42 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useRouter } from 'uni-use-router'
 
-const title = ref('Hello')
+const router = useRouter({
+	webview: '/pages/webview'
+})
 </script>
 
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
-    </view>
-  </view>
+	<view class="box">
+		<button @click="router.push('/pages/test/test?a=1&b=2')">Go Test</button>
+		<button @click="router.push({
+			url: '/pages/test/test',
+			query: {
+				a: 1,
+				b: '2',
+				c: null
+			}
+		})">Go Test</button>
+		<button @click="router.replace('/pages/test/test')">Go Replace</button>
+		<button @click="router.push('https://www.baidu.com')">Go H5</button>
+	</view>
 </template>
 
-<style>
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
-
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
+<style scoped>
+.box {
+	display: flex;
+	flex-direction: column;
+	gap: 10rpx;
 }
 </style>

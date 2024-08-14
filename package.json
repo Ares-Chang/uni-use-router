@@ -46,7 +46,7 @@
     "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint .",
-    "play": "nr dev && nr -C playground dev:h5",
+    "play": "nr build && nr -C playground dev:h5",
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
     "start": "esno src/index.ts",

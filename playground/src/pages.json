@@ -8,6 +8,9 @@
     },
     {
       "path": "pages/test/test"
+    },
+    {
+      "path": "pages/webview"
     }
   ],
   "globalStyle": {
