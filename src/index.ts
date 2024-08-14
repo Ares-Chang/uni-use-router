@@ -1,3 +1,4 @@
+import { isBrowser, isString } from '@antfu/utils'
 import { toQueryStringify } from './utils'
 import type { Router, RouterConfig, RouterLocationRaw } from './types'
 
@@ -7,7 +8,8 @@ export function useRouter(config: RouterConfig = {}): Router {
     let replace = false
     let tabBar = false
     let arg = {}
-    if (typeof to === 'string') {
+
+    if (isString(to)) {
       url = to
     }
     else {
@@ -22,7 +24,7 @@ export function useRouter(config: RouterConfig = {}): Router {
     const isLink = url.startsWith('http')
     if (isLink) {
       // 有 window 证明是浏览器环境
-      if (window)
+      if (isBrowser)
         return window.open(url, replace ? '_self' : '_blank')
 
       if (config?.webview) {
@@ -46,7 +48,7 @@ export function useRouter(config: RouterConfig = {}): Router {
   }
 
   function replace(to: RouterLocationRaw) {
-    const arg = typeof to === 'string' ? { path: to } : to
+    const arg = isString(to) ? { path: to } : to
 
     push({
       ...arg,
