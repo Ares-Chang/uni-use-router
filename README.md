@@ -8,13 +8,47 @@
 
 UniApp 路由跳转补充，与 Vue Router 语法靠近
 
-## Sponsors
+## 🚀 Install
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/Ares-Chang/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/Ares-Chang/static/sponsors.svg'/>
-  </a>
-</p>
+```sh
+pnpm add uni-use-router --save-dev
+```
+
+## ⚡️ Usage
+
+```vue
+<script setup lang="ts">
+import { useRouter } from 'uni-use-router'
+
+const router = useRouter({
+	webview: '/pages/webview'
+})
+</script>
+
+<template>
+	<view class="box">
+		<button @click="router.push('/pages/test/test?a=1&b=2')">Go Test</button>
+		<button @click="router.push({
+			url: '/pages/test/test',
+			query: {
+				a: 1,
+				b: '2',
+				c: null
+			}
+		})">Go Test</button>
+		<button @click="router.replace('/pages/test/test')">Go Replace</button>
+		<button @click="router.push('https://www.baidu.com')">Go H5</button>
+	</view>
+</template>
+
+<style scoped>
+.box {
+	display: flex;
+	flex-direction: column;
+	gap: 10rpx;
+}
+</style>
+```
 
 ## License
 
