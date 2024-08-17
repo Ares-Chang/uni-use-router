@@ -52,7 +52,7 @@ const router = useRouter({
 
 ## License
 
-[MIT](./LICENSE) License © 2024-PRESENT [Anthony Fu](https://github.com/Ares-Chang)
+[MIT](./LICENSE) License © 2024-PRESENT [Ares Chang](https://github.com/Ares-Chang)
 
 <!-- Badges -->
 
