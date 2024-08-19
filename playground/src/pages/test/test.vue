@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { useRouter } from 'uni-use-router'
+import { useRouter, useRoute } from 'uni-use-router'
 import { onLoad } from "@dcloudio/uni-app";
-import { ref } from 'vue'
+import { ref  } from 'vue'
 
 const router = useRouter()
+const route = useRoute()
+
+console.log(route, 'route')
 
 const query = ref({})
 

@@ -89,3 +89,19 @@ export declare interface LocationUniAppParams
   Partial<UniNamespace.SwitchTabOptions> {
   success?: (result: UniNamespace.NavigateToSuccessOptions | any) => void
 }
+
+/**
+ * 页面路由参数
+ * @TODO 待完善，须数据补充
+ */
+export interface PageParams {
+  fullPath: string
+  id: number
+  meta: object
+  openType: string
+  options: object
+  path: string
+  route: string
+  statusBarStyle: string
+  [key: string]: any
+}
