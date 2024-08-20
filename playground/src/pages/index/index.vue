@@ -20,13 +20,6 @@ const router = useRouter({
     <button @click="router.replace('/pages/test/test')">Go Replace</button>
     <button @click="router.push('https://www.baidu.com')">Go H5</button>
     <button @click="router.push('/pages/create/create')">Go CreateRouter</button>
+    <button @click="router.push('/pages/config/config')">Go useConfig</button>
   </view>
 </template>
-
-<style scoped>
-.box {
-  display: flex;
-  flex-direction: column;
-  gap: 10rpx;
-}
-</style>

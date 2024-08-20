@@ -18,11 +18,3 @@ import { router } from '../../composables/useRouter'
     <button @click="router.back()">Go Back</button>
   </div>
 </template>
-
-<style scoped>
-.box {
-  display: flex;
-  flex-direction: column;
-  gap: 10rpx;
-}
-</style>

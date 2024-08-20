@@ -13,6 +13,9 @@
       "path": "pages/create/create"
     },
     {
+      "path": "pages/config/config"
+    },
+    {
       "path": "pages/webview"
     }
   ],

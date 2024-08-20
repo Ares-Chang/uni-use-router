@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter, useRoute } from 'uni-use-router'
 import { onLoad } from "@dcloudio/uni-app";
-import { ref  } from 'vue'
+import { ref } from 'vue'
 
 const router = useRouter()
 const route = useRoute()

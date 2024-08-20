@@ -10,4 +10,11 @@ onHide(() => {
   console.log("App Hide");
 });
 </script>
-<style></style>
+
+<style>
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+</style>

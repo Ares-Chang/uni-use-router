@@ -1,8 +1,14 @@
 import { isBrowser, isString } from '@antfu/utils'
 import { toQueryStringify } from './utils'
+import { useConfig } from './shared'
 import type { Router, RouterConfig, RouterLocationRaw } from './types'
 
-export function useRouter(config: RouterConfig = {}): Router {
+export function useRouter(options: RouterConfig = {}): Router {
+  const config = {
+    ...useConfig(),
+    ...options,
+  }
+
   function push(to: RouterLocationRaw) {
     let url = ''
     let replace = false
