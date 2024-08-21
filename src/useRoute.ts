@@ -12,6 +12,7 @@ export function useRoute() {
 
   return {
     ...pageObj,
+    matched: pages,
     query: options,
   }
 }
