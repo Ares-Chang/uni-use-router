@@ -92,16 +92,11 @@ export declare interface LocationUniAppParams
 
 /**
  * 页面路由参数
- * @TODO 待完善，须数据补充
  */
-export interface PageParams {
+export interface RouteLocationRaw {
   fullPath: string
-  id: number
-  meta: object
-  openType: string
-  options: object
   path: string
-  route: string
-  statusBarStyle: string
-  [key: string]: any
+  query: object
+  current?: Page.PageInstance
+  matched: Page.PageInstance[]
 }
