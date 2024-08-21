@@ -17,5 +17,6 @@ import { router } from '../../composables/useRouter'
     <button @click="router.push('https://www.baidu.com')">Go H5</button>
     <button @click="router.push('/pages/webview?url=https://www.bilibili.com')">Go WebView</button>
     <button @click="router.back()">Go Back</button>
+    <button @click="router.push('/pages/intercept')">拦截 Go Home</button>
   </div>
 </template>

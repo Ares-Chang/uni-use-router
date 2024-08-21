@@ -8,7 +8,7 @@ export function useRoute() {
   const pages = getCurrentPages()
   const current = pages[pages.length - 1] as _PageInstance
 
-  const { options, ...pageObj } = current.$page
+  const { options, ...pageObj } = current?.$page || {}
 
   return {
     ...pageObj,

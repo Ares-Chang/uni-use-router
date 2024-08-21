@@ -1,7 +1,7 @@
 import { isUndefined } from '@antfu/utils'
 import { useRouter } from './useRouter'
 import { useRoute } from './useRoute'
-import type { RouterConfig } from './types'
+import type { RouterConfig, RouterLocationRaw } from './types'
 
 export function useCreateRouter(options: RouterConfig) {
   const router = useRouter(options)
@@ -14,7 +14,7 @@ export function useCreateRouter(options: RouterConfig) {
 
 const targetList = ['navigateTo', 'redirectTo', 'reLaunch', 'switchTab', 'navigateBack']
 
-type NavigationGuardWith = (to: string, from: string) => void
+type NavigationGuardWith = (to: string, from: string, next: (options?: RouterConfig & RouterLocationRaw) => void) => void
 
 function beforeEach(guard: NavigationGuardWith) {
   targetList.forEach((target) => {
@@ -27,7 +27,15 @@ function beforeEach(guard: NavigationGuardWith) {
           url = route.matched.at(-1)?.route || ''
         }
 
-        return guard(url, route.path)
+        return guard(url, route.path, (options) => {
+          if (isUndefined(options))
+            return true
+
+          const router = useRouter(options)
+          router.push(options)
+
+          return false
+        })
       },
     })
   })
