@@ -13,3 +13,8 @@ router.beforeEach((to, from) => {
     return false
   }
 })
+
+router.afterEach((to, from) => {
+  // eslint-disable-next-line no-console
+  console.log('[affterEach]: ', to, from)
+})
