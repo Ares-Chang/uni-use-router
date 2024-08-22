@@ -15,7 +15,7 @@ export function beforeEach(guard: NavigationGuardWith) {
 
         // 处理回退逻辑，取上一个存储的路由
         if (!isUndefined(delta)) {
-          url = route.matched.at(-1)?.route || ''
+          url = route.matched?.at?.(-1)?.route || ''
         }
 
         return guard(url, route.path, (options) => {
@@ -34,6 +34,7 @@ export function beforeEach(guard: NavigationGuardWith) {
 
 type NavigationHookAfter = (to: string, from: string, failure?: any) => any
 
+// TODO: 逻辑获取不对，功能几乎不能用，须优化
 export function afterEach(guard: NavigationHookAfter) {
   targetList.forEach((target) => {
     let to = ''
@@ -43,7 +44,7 @@ export function afterEach(guard: NavigationHookAfter) {
         const route = useRoute()
         // 处理回退逻辑，取上一个存储的路由
         if (!isUndefined(delta)) {
-          url = route.matched.at(-1)?.route || ''
+          url = route.matched?.at?.(-1)?.route || ''
         }
 
         to = url
