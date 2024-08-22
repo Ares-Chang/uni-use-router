@@ -1,4 +1,4 @@
-import { useCreateRouter } from 'uni-use-router'
+import { useCreateRouter } from '../../../src/index'
 
 export const router = useCreateRouter({
   webview: '/pages/webview',

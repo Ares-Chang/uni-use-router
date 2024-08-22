@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRouterConfig, useRouter } from 'uni-use-router'
+import { useRouter, useRouterConfig } from '../../../../src/index'
 
 useRouterConfig({
   webview: '/pages/webview',
@@ -10,7 +10,11 @@ const router = useRouter()
 
 <template>
   <div class="box">
-    <button @click="router.push('https://www.baidu.com')">Go H5</button>
-    <button @click="router.back()">Go Back</button>
+    <button @click="router.push('https://www.baidu.com')">
+      Go H5
+    </button>
+    <button @click="router.back()">
+      Go Back
+    </button>
   </div>
 </template>

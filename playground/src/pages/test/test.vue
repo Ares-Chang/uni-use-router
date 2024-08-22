@@ -1,18 +1,25 @@
 <script setup lang="ts">
-import { useRouter, useRoute } from 'uni-use-router'
+import { useRoute, useRouter } from '../../../../src/index'
 
 const router = useRouter()
 const route = useRoute()
 
+// eslint-disable-next-line no-console
 console.log(route, 'route')
 </script>
 
 <template>
   <div>
-    <div class="query">{{ route.query }}</div>
-    
-    <button @click="router.back()">back</button>
-    <button @click="router.replace('/pages/index/index')">index</button>
+    <div class="query">
+      {{ route.query }}
+    </div>
+
+    <button @click="router.back()">
+      back
+    </button>
+    <button @click="router.replace('/pages/index/index')">
+      index
+    </button>
   </div>
 </template>
 

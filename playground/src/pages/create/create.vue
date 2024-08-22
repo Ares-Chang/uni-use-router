@@ -4,19 +4,35 @@ import { router } from '../../composables/useRouter'
 
 <template>
   <div class="box">
-    <button @click="router.push('/pages/test/test?a=1&b=2')">Go Test</button>
-    <button @click="router.push({
-      url: '/pages/test/test',
-      query: {
-        a: 1,
-        b: '2',
-        c: null
-      }
-    })">Go Test</button>
-    <button @click="router.replace('/pages/test/test')">Go Replace</button>
-    <button @click="router.push('https://www.baidu.com')">Go H5</button>
-    <button @click="router.push('/pages/webview?url=https://www.bilibili.com')">Go WebView</button>
-    <button @click="router.back()">Go Back</button>
-    <button @click="router.push('/pages/intercept')">拦截 Go Home</button>
+    <button @click="router.push('/pages/test/test?a=1&b=2')">
+      Go Test
+    </button>
+    <button
+      @click="router.push({
+        url: '/pages/test/test',
+        query: {
+          a: 1,
+          b: '2',
+          c: null,
+        },
+      })"
+    >
+      Go Test
+    </button>
+    <button @click="router.replace('/pages/test/test')">
+      Go Replace
+    </button>
+    <button @click="router.push('https://www.baidu.com')">
+      Go H5
+    </button>
+    <button @click="router.push('/pages/webview?url=https://www.bilibili.com')">
+      Go WebView
+    </button>
+    <button @click="router.back()">
+      Go Back
+    </button>
+    <button @click="router.push('/pages/intercept')">
+      拦截 Go Home
+    </button>
   </div>
 </template>
