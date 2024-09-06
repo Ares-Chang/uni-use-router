@@ -21,7 +21,7 @@ interface _PageInstance extends Page.PageInstance {
   options: object
 }
 
-export function useRoute<T extends Partial<RouteLocationRaw>>() {
+export function useRoute<T extends Partial<RouteLocationRaw> = RouteLocationRaw>() {
   /**
    * @TODO: 类型错误，不会写了
    *
