@@ -21,8 +21,18 @@ interface _PageInstance extends Page.PageInstance {
   options: object
 }
 
-export function useRoute() {
-  const obj = reactive<RouteLocationRaw>({
+export function useRoute<T extends Partial<RouteLocationRaw>>() {
+  /**
+   * @TODO: 类型错误，不会写了
+   *
+   * const route = useRoute<{
+   *   query: {
+   *     id: number
+   *   }
+   * }>()
+   * const id = route.query.id // 这里类型是 any，应该是 number
+   */
+  const obj = reactive<T | RouteLocationRaw>({
     fullPath: '',
     path: '',
     query: {},

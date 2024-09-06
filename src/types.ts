@@ -96,7 +96,11 @@ export declare interface LocationUniAppParams
 export interface RouteLocationRaw {
   fullPath: string
   path: string
-  query: object
+  query: AnyObject
   current?: Page.PageInstance
   matched: Page.PageInstance[]
+}
+
+export interface AnyObject {
+  [key: string]: any
 }
