@@ -1,7 +1,7 @@
 {
   "name": "uni-use-router",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "packageManager": "pnpm@9.5.0",
   "description": "UniApp 路由跳转补充，与 Vue Router 语法靠近",
   "author": "Ares Change <AresChang114@qq.com>",
